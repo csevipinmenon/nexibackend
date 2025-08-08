@@ -2,16 +2,16 @@ import datetime
 import webbrowser
 import os
 import pyjokes
-import pygetwindow as gw
-import pyautogui
+# import pygetwindow as gw
+# import pyautogui
 
-def closed_tab(targets):
-    for window in gw.getWindowsWithTitle("Chrome"):
-        for target in targets:
-            if target.lower() in window.title.lower():
-                print(f"Closing: {window.title}")
-                window.activate()
-                pyautogui.hotkey('ctrl', 'w')  
+# def closed_tab(targets):
+#     for window in gw.getWindowsWithTitle("Chrome"):
+#         for target in targets:
+#             if target.lower() in window.title.lower():
+#                 print(f"Closing: {window.title}")
+#                 window.activate()
+#                 pyautogui.hotkey('ctrl', 'w')  
 
 
 
@@ -95,9 +95,9 @@ def Action(message: str) -> str:
     elif "good morning" in msg:
         return "Good morning! I hope you have a great day ahead."
     
-    elif "close youtube" in msg or "closed youtube" in msg :
-        closed_tab("youtube")
-        return "closing youtube!"
+    # elif "close youtube" in msg or "closed youtube" in msg :
+    #     closed_tab("youtube")
+    #     return "closing youtube!"
     
     elif "joke" in msg or "jokes" in msg :
         joke=pyjokes.get_joke(language="en",category="neutral")  
@@ -109,15 +109,15 @@ def Action(message: str) -> str:
             os.startfile(os.path.join(add,listsong[0]))
             return f"playing song..."
     
-    elif "close google" in msg or "closed google" in msg :
-        closed_tab("google")
-        return "closing google!"
-    elif "close github" in msg or "closed github" in msg :
-        closed_tab("github")
-        return "closing github!"
-    elif "close chatgpt" in msg or "closed chatgpt" in msg :
-        closed_tab("chatgpt")
-        return "closing chatgpt!"
+    # elif "close google" in msg or "closed google" in msg :
+    #     closed_tab("google")
+    #     return "closing google!"
+    # elif "close github" in msg or "closed github" in msg :
+    #     closed_tab("github")
+    #     return "closing github!"
+    # elif "close chatgpt" in msg or "closed chatgpt" in msg :
+    #     closed_tab("chatgpt")
+    #     return "closing chatgpt!"
 
     elif "time" in msg:
         now = datetime.datetime.now()

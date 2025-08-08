@@ -1,5 +1,4 @@
 fastapi
 uvicorn
 pyjokes
-pyautogui
-pygetwindow
+
